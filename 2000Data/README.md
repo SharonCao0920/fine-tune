@@ -3,7 +3,7 @@
 ### 1. Preparing the Data and Launching the Fine Tuning
 
 * Download the .XLSX file from [here](https://www.kaggle.com/datasets/saratchendra/medicine-recommendation/)
-* Add python code to transfor data into desired format.
+* Add python code to transfor data into desired format. [Python Code](https://github.com/SharonCao0920/fine-tune/blob/main/2000Data/dataPrepare.py)
 * Got .jsonl file ready to use
   
   ![image](https://github.com/SharonCao0920/fine-tune/assets/54694766/aa5756b1-eb8c-48c1-b450-d80146ef2af1)
@@ -64,6 +64,7 @@ $ openai api completions.create -m ada:ft-personal-2023-11-22-07-16-27 -p <YOUR_
 ## Step 2: Testing the Fine Tuned Model
 
 Test the fine-tuned model using the provided Python code.
+[Python Code](https://github.com/SharonCao0920/fine-tune/blob/main/2000Data/app.py)
 
 **Result**
 
