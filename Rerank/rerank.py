@@ -32,43 +32,43 @@ client = weaviate.Client(
 )
 
 
-# ## Dense Retrieval
-from utils import dense_retrieval
+# # ## Dense Retrieval
+# from utils import dense_retrieval
 
-query = "What is the capital of Canada?"
-dense_retrieval_results = dense_retrieval(query, client)
+# query = "What is the capital of Canada?"
+# dense_retrieval_results = dense_retrieval(query, client)
 
-from utils import print_result
+# from utils import print_result
 
-print_result(dense_retrieval_results)
+# print_result(dense_retrieval_results)
 
 from utils import keyword_search
 
-query_1 = "What is the capital of Canada?"
+# query_1 = "What is the capital of Canada?"
 
-query_1 = "What is the capital of Canada?"
-results = keyword_search(query_1,
-                         client,
-                         properties=["text", "title", "url", "views", "lang", "_additional {distance}"],
-                         num_results=3
-                        )
+# query_1 = "What is the capital of Canada?"
+# results = keyword_search(query_1,
+#                          client,
+#                          properties=["text", "title", "url", "views", "lang", "_additional {distance}"],
+#                          num_results=3
+#                         )
 
-for i, result in enumerate(results):
-    print(f"i:{i}")
-    print(result.get('title'))
-    print(result.get('text'))
+# for i, result in enumerate(results):
+#     print(f"i:{i}")
+#     print(result.get('title'))
+#     print(result.get('text'))
 
-query_1 = "What is the capital of Canada?"
-results = keyword_search(query_1,
-                         client,
-                         properties=["text", "title", "url", "views", "lang", "_additional {distance}"],
-                         num_results=500
-                        )
+# query_1 = "What is the capital of Canada?"
+# results = keyword_search(query_1,
+#                          client,
+#                          properties=["text", "title", "url", "views", "lang", "_additional {distance}"],
+#                          num_results=500
+#                         )
 
-for i, result in enumerate(results):
-    print(f"i:{i}")
-    print(result.get('title'))
-    #print(result.get('text'))
+# for i, result in enumerate(results):
+#     print(f"i:{i}")
+#     print(result.get('title'))
+#     #print(result.get('text'))
 
 def rerank_responses(query, responses, num_responses=10):
     reranked_responses = co.rerank(
@@ -79,13 +79,13 @@ def rerank_responses(query, responses, num_responses=10):
         )
     return reranked_responses
 
-texts = [result.get('text') for result in results]
-reranked_text = rerank_responses(query_1, texts)
+# texts = [result.get('text') for result in results]
+# reranked_text = rerank_responses(query_1, texts)
 
-for i, rerank_result in enumerate(reranked_text):
-    print(f"i:{i}")
-    print(f"{rerank_result}")
-    print()
+# for i, rerank_result in enumerate(reranked_text):
+#     print(f"i:{i}")
+#     print(f"{rerank_result}")
+#     print()
 
 
 from utils import dense_retrieval
